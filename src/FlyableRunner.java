@@ -1,7 +1,8 @@
 
-interface Flyable{
+interface Flyable {
     void fly();
 }
+
 class Bird implements Flyable {
 
     @Override
@@ -10,19 +11,19 @@ class Bird implements Flyable {
     }
 }
 
-    class Aeroplane implements Flyable {
-        @Override
-        public void fly() {
-            System.out.println(" with fuel");
+class Aeroplane implements Flyable {
+    @Override
+    public void fly() {
+        System.out.println(" with fuel");
+    }
+}
+
+public class FlyableRunner {
+
+    public static void main(String[] args) {
+        Flyable[] flyingObjects = {new Bird(), new Aeroplane()};//Polymorphism same code, providing different behavior
+        for (Flyable object : flyingObjects) {
+            object.fly();
         }
     }
-
-    public class FlyableRunner {
-
-        public static void main(String[] args) {
-            Flyable[] flyingObjects = { new Bird(), new Aeroplane()};
-            for(Flyable object : flyingObjects){
-object.fly();
-            }
-        }
-    }
+}
